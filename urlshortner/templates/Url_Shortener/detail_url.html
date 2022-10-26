@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ url.pk }}{% endblock title %}
+
+{% block page_header %}
+    <h3>Detail {{ url.pk }}</h3>
+{% endblock page_header %}
+
+{% block content %}
+    <div class="flex-column justify-content-center">
+        <h5><p>Url: {{ url.url }}</p></h5>
+        <h5><p>Created url {{ url.created }} in {{ url.slug }}</p></h5>
+        <a class="btn btn-danger" href="{% url 'urlshortner:url_deleted' url.pk %}">Delete Url</a>
+    </div>
+{% endblock content %}

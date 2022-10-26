@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %}View URL{% endblock title %}
+
+{% block page_header %}
+    <h3>View URL</h3>
+{% endblock page_header %}
+
+{% block content %}
+    <a class="href" href="/">Home</a>
+
+<table class=" table table-dark table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Old URL</th>
+      <th scope="col">New URL</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in url %}
+    <tr>
+      <td><a href="{% url 'urlshortner:url_detail' i.pk %}">{{ i.url }}</a></td>
+      <td>{{ i.slug }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
+
