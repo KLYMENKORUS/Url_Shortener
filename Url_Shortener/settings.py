@@ -28,8 +28,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # My apps
     "urlshortner.apps.UrlshortnerConfig",
+    "api.apps.ApiConfig",
     #
     "django_bootstrap5",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
